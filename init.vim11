@@ -1,0 +1,537 @@
+lua <<EOF
+--vim.cmd [[packadd nvim-jdtls]]
+vim.cmd [[packadd packer.nvim]]
+return require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
+  use {
+      'neovim/nvim-lspconfig',
+      'williamboman/nvim-lsp-installer',
+      }
+  use 'hrsh7th/nvim-cmp'
+
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+
+  use 'saadparwaiz1/cmp_luasnip' 
+  use 'L3MON4D3/LuaSnip' 
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-ui-select.nvim'
+  use 'onsails/lspkind-nvim'
+--use 'morhetz/gruvbox'
+  use 'folke/tokyonight.nvim'
+--use 'sainnhe/sonokai'
+  --use 'EdenEast/nightfox.nvim' -- Packer    
+  use 'rafamadriz/friendly-snippets'
+  use 'hrsh7th/nvim-compe'
+  use 'junegunn/goyo.vim'
+  use 'mattn/emmet-vim'
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+--use({
+  --"mfussenegger/nvim-jdtls",
+  --config = function()
+    --require("plugin.jdtls.config").attach()
+  --end,
+  --module = "jdtls",
+--})
+
+--use {
+            --'mfussenegger/nvim-jdtls',
+            --disable = true,
+            --ft = "java"
+        --}
+use 'puremourning/vimspector'
+use {
+    'crispgm/nvim-tabline',
+    config = function()
+        require('tabline').setup({})
+    end,
+}
+use { 'Issafalcon/lsp-overloads.nvim'}
+ use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+end)
+EOF
+packadd! vimspector
+syntax on
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+nnoremap <leader>y :let @+=expand('%:t')<CR>
+nnoremap <leader>e :!start explorer %:p:h<CR>
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_base_dir="C:\\Users\\MSI\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vimspector"
+"nnoremap <leader>sb :!start cmd /C  dotnet watch --project  H:\Item\Api.RoutingSlip\Api.RoutingSlip\Api.csproj<CR>
+"nnoremap <leader>sw :!start cmd /C "cd /d H:\Item\Client.RoutingSlip & ng serve --open"<CR>
+"nnoremap <leader>aa :!start cmd /C  dotnet watch --project  H:\Minedu\Ayni30493\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Api\Minedu.ProcesoContratacion.Api.csproj <CR>
+nnoremap <leader>aa :!start cmd /C  dotnet watch --project  E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Api\Minedu.ProcesoContratacion.Api.csproj <CR>
+"nnoremap <leader>sw :!start cmd /C "cd /d  H:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & ng serve --open"<CR>
+"nnoremap <leader>aw :!start cmd /C "cd /d  H:\Minedu\Ayni30493\Front\2.Codigo\rrhh-personal-web & ng build --watch"<CR>
+"nnoremap <leader>aw :!start cmd /C "cd /d  E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & ng build --watch"<CR>
+nnoremap <leader>aw :!start cmd /C "cd /d  E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & ng serve"<CR>
+
+nnoremap <Leader>v :e ~/AppData/Local/nvim/init.vim <CR>
+vmap <leader>y "*y
+nmap <leader>p "*p
+vmap < <gv
+vmap > >gv
+nmap ,e :Ex<cr>
+"nmap ,ew :Ex H:\Sunedu\LINU\DEV\src\Web\gnosis.web\ClientApp<cr>
+"nmap ,ef :Ex H:\Sunedu\LINU\DEV\src\Formatos<cr>
+"nmap ,ep :Ex H:\Sunedu\LINU\DEV\src\Presentacion<cr>
+"nmap ,eo :Ex H:\Sunedu\LINU\DEV\src\Orquestador<cr>
+"nmap ,eu :Ex H:\Sunedu\LINU\DEV\src\Flujo<cr>
+"nmap ,es :Ex H:\Sunedu\LINU\DEV\src\Solicitud<cr>
+"nmap ,m1 :Ex H:\Minedu\Ayni30493\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Api<cr>
+"nmap ,m2 :Ex H:\Minedu\Ayni30493\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Application<cr>
+"nmap ,m3 :Ex H:\Minedu\Ayni30493\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Domain<cr>
+"nmap ,m4 :Ex H:\Minedu\Ayni30493\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Infraestructure<cr>
+"nmap ,m5 :Ex H:\Minedu\Ayni30493\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Job<cr>
+"nmap ,mw :Ex H:\Minedu\Ayni30493\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos<cr>
+nmap ,m1 :Ex E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Api<cr>
+nmap ,m2 :Ex E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Application<cr>
+nmap ,m3 :Ex E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Domain<cr>
+nmap ,m4 :Ex E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Infraestructure<cr>
+nmap ,m5 :Ex E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Job<cr>
+nmap ,mw :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos<cr>
+
+nmap ,l :noh<cr>
+nmap ,y  viwy<esc>
+nmap ,h  vi"y<esc>
+nmap ,p  viw"0p<esc>
+nmap ,a ea
+nmap ,b bi
+nmap ,9 f(l
+nmap ,9v f(vi(
+nmap ,, f<l
+nmap ,,v f<vi<
+nmap <leader>< 10<c-w><
+nmap <leader>> 10<c-w>>
+nmap <leader>( vi(
+nmap <leader>" vi"
+nmap <leader>{ vi{
+nmap <leader>w :w!<cr>
+nmap <leader>' I//<esc>
+nmap <leader>ch :lcd %:p:h<cr>
+nmap <leader>b1 :!dotnet build E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Api<cr>
+nmap <leader>b2 :!dotnet build E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Application<cr>
+nmap <leader>b3 :!dotnet build E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Domain<cr>
+nmap <leader>b4 :!dotnet build E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Infraestructure<cr>
+nmap <leader>b5 :!dotnet build E:\Minedu\Ayni\Back\2.Codigo\PersonalProcesoContratacion\Minedu.ProcesoContratacion.Job<cr>
+"nmap <leader>bs :!dotnet build H:\Sunedu\LINU\DEV\src\Solicitud\Solicitud.Api\Gnosis.Ms.Solicitud.Api.csproj<cr>
+"nmap <leader>bo :!dotnet build H:\Sunedu\LINU\DEV\src\Orquestador\Orquestador.Api\Gnosis.Ms.Orquestador.Api.csproj<cr>
+"nmap <leader>bod :!docker-compose -f H:\Sunedu\LINU\DEV\src\Orquestador\docker-compose.yml up --build -d<cr>
+"nmap <leader>bf :!dotnet build H:\Sunedu\LINU\DEV\src\Formatos\Formatos.Api\Gnosis.Ms.Formatos.Api.csproj<cr>
+"nmap <leader>bfd :!docker-compose -f H:\Sunedu\LINU\DEV\src\Formatos\docker-compose.yml up --build -d<cr>
+"nmap <leader>bu :!dotnet build H:\Sunedu\LINU\DEV\src\Flujo\Flujo.Api\Gnosis.Ms.Flujo.Api.csproj<cr>
+"nmap <leader>bw :!docker-compose -f H:\Sunedu\LINU\DEV\src\Web\docker-compose-nginx-local.yml up --build -d<cr>
+"nmap <leader>bwi :!docker-compose -f H:\Sunedu\LINU\DEV-1\src\Web\docker-compose-nginx-local.yml up --build -d<cr>
+"nmap <leader>bk :!dotnet build H:\Sunedu\LINU\DEV\src\Workers\General\Worker\Gnosis.Worker.General.csproj<cr>
+"nmap <leader>bkd :!docker-compose -f H:\Sunedu\LINU\DEV\src\Workers\General\docker-compose.yml up --build -d<cr>
+"nmap <leader>bp :!dotnet build H:\Sunedu\LINU\DEV\src\Presentacion\Presentacion.Api\Gnosis.Ms.Presentacion.Api.csproj<cr>
+"nmap <leader>bpd :!docker-compose -f H:\Sunedu\LINU\DEV\src\Presentacion\docker-compose.yml -f H:\Sunedu\LINU\DEV\src\Presentacion\docker-compose.override.yml up --build -d<cr>
+"nmap <leader>bd :!dotnet build H:\Sunedu\LINU\DEV\src\Documentos\Documentos.Api\Gnosis.Ms.Documentos.Api.csproj<cr>
+"nmap <leader>ro <plug>(lsp-definition)<cr> nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
+"inoremap ;g <++>
+"inoremap ~q ""<++><Esc>?"<CR>i
+inoremap \= <SPACE>=<SPACE>;<esc>i
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  set cursorline relativenumber number
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+set relativenumber
+set completeopt=menu,menuone,noselect
+set mouse=
+set mousemodel=extend
+
+lua <<EOF
+require'tabline'.setup({
+    show_index = true,        -- show tab index
+    show_modify = true,       -- show buffer modification indicator
+    modify_indicator = '[+]', -- modify indicator
+    no_name = '[No name]',    -- no name buffer name
+})
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c_sharp" },
+  sync_install = false,
+  auto_install = false, 
+  ignore_install = { "javascript","typescript","html" },
+  highlight = {
+    enable = true,
+
+    disable = {"lua","vim","javascript","typescript","html"},
+    additional_vim_regex_highlighting =false, 
+  },
+  index = {
+	    enable = false,
+		}
+}
+
+require('lualine').setup{
+options = {
+    theme = 'tokyonight'
+  }
+}
+--vim.g.user_emmet_leader_key =','
+--vim.g.user_emmet_install_global = 0
+vim.cmd([[
+    autocmd FileType html,css EmmetInstall
+set expandtab " expand tabs
+set shiftwidth=2 " spaces for autoindenting
+set softtabstop=2 " remove a full pseudo-TAB when i press <BS>
+set splitbelow splitright  
+set foldmethod=manual "To avoid performance issues, I never fold anything  
+set lazyredraw  
+set ttyfast
+set noshowmode " We don't need to know the insert/normal mode casue we have lualine
+set ignorecase
+]])
+
+vim.g.goyo_width = 200
+local set = vim.opt
+set.cursorline = true
+set.number = true
+
+
+local map = function(key)
+  -- get the extra options
+  local opts = {noremap = true}
+  for i, v in pairs(key) do
+    if type(i) == 'string' then opts[i] = v end
+  end
+
+  -- basic support for buffer-scoped keybindings
+  local buffer = opts.buffer
+  opts.buffer = nil
+
+  if buffer then
+    vim.api.nvim_buf_set_keymap(0, key[1], key[2], key[3], opts)
+  else
+    vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
+  end
+end
+
+map{'n', '<Leader>w', ':write<CR>', noremap = true}
+map{'n', '<Leader>rn', ':lua vim.lsp.buf.rename()<CR>', noremap = true}
+map{'n', '<Leader>fu', ':Telescope lsp_references<CR>', noremap = true}
+map{'n', '<Leader>v', ':e ~/AppData/Local/nvim/init.vim<CR>', noremap = true}
+map{'n', '<Leader>s', ':so ~/AppData/Local/nvim/init.vim<CR>', noremap = true}
+map{ 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', noremap = true}
+map{'n', '<Tab>k', "<cmd>lua vim.diagnostic.goto_next({ popup_opts = { border = 'single' }})<CR>", noremap = true}
+map{'n', '<Tab>j', "<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { border = 'single' }})<CR>", noremap = true}
+map{'n', '<Tab><Tab>', ':lua  vim.diagnostic.open_float(0, { scope = "line", border = "single" }) <CR>', noremap = true}
+map{'n', '<Leader>dd', '<cmd>Telescope diagnostics<CR>', noremap = true}
+
+map{'n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>", noremap = true}
+map{'n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", noremap = true}
+map{'n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", noremap = true}
+map{'n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", noremap = true}
+map{'n', '<leader>bb', "<cmd>Goyo<cr>", noremap = true}
+map{'n', '<leader>hy', "<cmd>call emmet#lang#html#balanceTag(10)<cr>", noremap = true}
+
+--vim.cmd('colorscheme gruvbox')
+vim.cmd[[colorscheme tokyonight]]
+
+--vim.cmd[[colorscheme sonokai]]
+--vim.g.sonokai_style = 'default'
+
+--vim.cmd[[colorscheme nordfox]]
+
+local lspkind = require 'lspkind'
+lspkind.init({
+        mode = 'symbol_text',
+	preset = 'codicons',
+})
+
+local border = {
+{"╭", "FloatBorder"},
+{"─", "FloatBorder"},
+{"╮", "FloatBorder"},
+{"│", "FloatBorder"},
+{"╯", "FloatBorder"},
+{"─", "FloatBorder"},
+{"╰", "FloatBorder"},
+{"│", "FloatBorder"},
+
+}
+vim.diagnostic.config({
+ virtual_text = false,
+  --virtual_text = {
+   ---- source = "always",  -- Or "if_many"
+    --prefix = '●', -- Could be '■', '▎', 'x'
+  --},
+  severity_sort = true,
+  float = {
+    source = "always",  -- Or "if_many"
+    border = border
+  },
+})
+
+vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+-- LSP settings (for overriding per client)
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+}
+
+local tel = require 'telescope'
+tel.setup {
+        defaults = {
+            path_display = { truncate = true },
+            --layout_strategy = "vertical",
+            --layout_strategy = "center",
+	    shorten_path = true,
+           layout_config = {
+	          width = 0.99 ,
+                --height = 0.99,
+                --prompt_position = 'top',
+		preview_width = 0.60
+         },
+      },
+extensions = {
+    --["ui-select"] = {
+     --require("telescope.themes").get_dropdown { }
+    --}
+}
+}
+
+require("telescope").load_extension("ui-select")
+
+-- luasnip setup
+require("luasnip.loaders.from_vscode").load({ include = { "cs","js","html", "typescript","scss" } })
+local luasnip = require 'luasnip'
+local cmp = require 'cmp'
+cmp.setup {
+    formatting = {
+	format = function(entry, vim_item)
+	   vim_item.kind = lspkind.presets.default[vim_item.kind]
+	   vim_item.menu = ({
+		   luasnip = "[Snip]",
+		   nvim_lsp = "[LSP]",
+		   look = "[Dict]",
+		   buffer = "[Buffer]",
+	   })[entry.source.name]
+           vim_item.kind, vim_item.menu = vim_item.menu, vim_item.kind
+           return vim_item
+	end
+    },
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+	   --   luasnip.lsp_expand(args.body)
+        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
+    	mapping = {
+		    ['<C-p>'] = cmp.mapping.select_prev_item(),
+		    ['<C-n>'] = cmp.mapping.select_next_item(),
+		    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+		    ['<C-Space>'] = cmp.mapping.complete(),
+		    ['<C-e>'] = cmp.mapping.close(),
+		    ['<CR>'] = cmp.mapping.confirm {
+		      behavior = cmp.ConfirmBehavior.Replace,
+		      select = true,
+		    },
+		    ['<Tab>'] = function(fallback)
+		      if cmp.visible() then
+			cmp.select_next_item()
+		      elseif luasnip.expand_or_jumpable() then
+			luasnip.expand_or_jump()
+		      else
+			fallback()
+		      end
+		    end,
+		    ['<S-Tab>'] = function(fallback)
+		      if cmp.visible() then
+			cmp.select_prev_item()
+		      elseif luasnip.jumpable(-1) then
+			luasnip.jump(-1)
+		      else
+			fallback()
+		      end
+		    end,
+	},
+ 	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+		{ name = 'nvim_lsp_signature_help' }
+		}
+}
+local on_attach = function(client, bufnr)
+	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+	local opts = { noremap=true, silent=true }
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>w=', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 100)<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wL', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>ws', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wS', '<cmd>Telescope lsp_workspace_symbols<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wq', '<cmd>lua vim.diagnostic.setqflist()<CR>', opts)
+	    require('lsp-overloads').setup(client, { })
+end
+local pid = vim.fn.getpid()
+local omnisharp_bin = "C://Users//MSI//AppData//Local//omnisharp-vim//omnisharp-roslyn//OmniSharp.exe"
+--local omnisharp_bin = "C://Users//MSI//AppData//Local//nvim-data//lsp_servers//omnisharp//omnisharp//OmniSharp.exe"
+local nvim_lsp = require'lspconfig'
+--require'lspconfig'.omnisharp.setup
+--{
+	--handlers = handlers,
+	--capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	--on_attach = on_attach,
+	----on_attach = function(_, bufnr)
+		----vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+		----local opts = { noremap=true, silent=true }
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+----
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>w=', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 100)<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wL', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>ws', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wS', '<cmd>Telescope lsp_workspace_symbols<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wq', '<cmd>lua vim.diagnostic.setqflist()<CR>', opts)
+	----end,
+	--cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+	----root_dir = nvim_lsp.util.root_pattern("*.csproj","*.sln"),
+	--root_dir = nvim_lsp.util.root_pattern("*.sln"),
+	--filetypes = {"cs"},
+	--on_new_config = function(new_config, new_root_dir)
+	   --new_config.root_dir = new_root_dir
+	--end
+--}
+
+local tsserver_bin = "C:\\Users\\MSI\\AppData\\Roaming\\npm\\typescript-language-server.cmd";
+--require'lspconfig'.tsserver.setup{
+--cmd = {tsserver_bin, 'typescript-language-server', '--stdio'};
+  --root_dir = nvim_lsp.util.root_pattern("package.json");
+  --on_attach = on_attach,
+  ----on_attach = function(_, bufnr)
+		----local opts = { noremap=true, silent=true }
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+----
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>w=', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 100)<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wL', '<cmd>lua vim.lsp.codelens.run()<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>ws', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wS', '<cmd>Telescope lsp_workspace_symbols<CR>', opts)
+		----vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wq', '<cmd>lua vim.diagnostic.setqflist()<CR>', opts)
+	----end
+--}
+ 
+
+
+
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    if server.name == 'tsserver' then
+	opts.cmd = {tsserver_bin, 'typescript-language-server', '--stdio'};
+	opts.root_dir = nvim_lsp.util.root_pattern("package.json");
+	opts.on_attach = on_attach;
+	opts.filetypes = {"typescript"};
+	opts.handlers = handlers;
+--	print('tsserver')
+    end
+
+    if server.name == 'omnisharp' then
+	--opts.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities());
+	opts.handlers = handlers;
+	opts.on_attach = on_attach;
+	--opts.cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
+       ---- opts.root_dir = nvim_lsp.util.root_pattern("*.csproj","*.sln");
+	--opts.root_dir = nvim_lsp.util.root_pattern("*.sln");
+	--opts.filetypes = {"cs"};
+	--opts.on_new_config = function(new_config, new_root_dir)
+	   --new_config.root_dir = new_root_dir;
+	   --print(new_root_dir)
+	--end
+	--print('omnisharp')
+    end
+
+    if server.name == 'angularls' then
+	opts.on_attach = on_attach;
+	opts.filetypes = {"html"};
+	opts.handlers = handlers;
+	opts.root_dir = nvim_lsp.util.root_pattern("package.json");
+--	print('angularls')
+    end
+    if server.name == 'emmet_ls' then
+	local capabilities = vim.lsp.protocol.make_client_capabilities();
+	capabilities.textDocument.completion.completionItem.snippetSupport = true;
+	 opts.capabilities = capabilities;
+	opts.handlers = handlers;
+	 opts.filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' };
+--	print('emmet_ls')
+    end
+    server:setup(opts)
+    vim.cmd[[do user LspAttachBuffers]]
+end)
+
+EOF
+"https://aliquote.org/post/vim-clangd/
