@@ -1,34 +1,13 @@
---[[
-
-Neovim init file
-Maintainer: brainf+ck
-Website: https://github.com/brainfucksec/neovim-lua
-
---]]
-
--- Import Lua modules
-require('packer_init')
-require('plugins/nvim-tabline')
-require('plugins/nvim-lualine')
-require('plugins/nvim-treesitter')
-require('plugins/nvim-telescope')
-require('plugins/cmp_luasnip')
-require('plugins/nvim-indent_blankline')
---require('plugins/nvim-lspconfig')
-require('lsp/lspconfig')
-require('core/vimscript')
-require('core/keymaps')
-require('core/common')
-require('core/colors')
---require('plugins/treesitter')
---require('core/options')
---require('core/autocmds')
---require('core/keymaps')
---require('core/colors')
---require('core/statusline')
---require('lsp/lspconfig')
---require('plugins/nvim-tree')
---require('plugins/indent-blankline')
---require('plugins/nvim-cmp')
---require('plugins/nvim-treesitter')
---require('plugins/alpha-nvim')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("plugins")
