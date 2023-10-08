@@ -1,55 +1,14 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    {
-      "jose-elias-alvarez/null-ls.nvim",
-      dependencies = {
-        --"adalessa/php-code-actions.nvim",
-      },
-    },
-    {
-      "williamboman/mason.nvim",
-      opts = {
-        ui = {
-          border = "rounded",
-        },
-      },
-    },
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    {
-      "lvimuser/lsp-inlayhints.nvim",
-      config = function()
-        require("lsp-inlayhints").setup()
-        vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-        vim.api.nvim_create_autocmd("LspAttach", {
-          group = "LspAttach_inlayhints",
-          callback = function(args)
-            if not (args.data and args.data.client_id) then
-              return
-            end
-
-            local bufnr = args.buf
-            local client = vim.lsp.get_client_by_id(args.data.client_id)
-            require("lsp-inlayhints").on_attach(client, bufnr, false)
-          end,
-        })
-      end,
-    },
-    {
-      "j-hui/fidget.nvim",
-      enabled = false,
-      opts = {
-        window = {
-          blend = 0,
-        },
-        sources = {
-          ["null-ls"] = {
-            ignore = true,
-          },
-        },
-      },
-    },
+      "williamboman/nvim-lsp-installer",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+      "L3MON4D3/LuaSnip"
   },
   event = "VeryLazy",
   config = function()

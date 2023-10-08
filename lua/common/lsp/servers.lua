@@ -12,33 +12,34 @@ local default = function()
 end
 
 return {
-  ["lua_ls"] = function()
-    return {
-      on_attach = lsp_attach,
-      flags = lsp_flags,
-      settings = {
-        Lua = {
-          runtime = {
-            version = "LuaJIT",
-          },
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-            checkThirdParty = false,
-          },
-          telemetry = {
-            enable = false,
-          },
-          hint = {
-            enable = true,
-          }
-        },
-      },
-    }
-  end,
+  --["lua_ls"] = function()
+    --return {
+      --on_attach = lsp_attach,
+      --flags = lsp_flags,
+      --settings = {
+        --Lua = {
+          --runtime = {
+            --version = "LuaJIT",
+          --},
+          --diagnostics = {
+            --globals = { "vim" },
+          --},
+          --workspace = {
+            --library = vim.api.nvim_get_runtime_file("", true),
+            --checkThirdParty = false,
+          --},
+          --telemetry = {
+            --enable = false,
+          --},
+          --hint = {
+            --enable = true,
+          --}
+        --},
+      --},
+    --}
+  --end,
  ["angularls"] = default,
+ ["omnisharp"] = default,
  ["tsserver"] = function()
     return {
       on_attach = lsp_attach,
