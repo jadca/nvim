@@ -21,7 +21,7 @@ nvim_treesitter.setup {
     enable = true,
     --disable = {"lua","vim","javascript","typescript","html"},
     disable = {"lua","vim"},
-    additional_vim_regex_highlighting =false, 
+    additional_vim_regex_highlighting =true, 
   },
  incremental_selection = {
     enable = true,
@@ -34,7 +34,18 @@ nvim_treesitter.setup {
   },
   indent = {
 	    enable = false,
-		}
+		},
+  rainbow = {
+      enable = true,
+      -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+      extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+      max_file_lines = nil, -- Do not enable for files with more than n lines, int
+      -- colors = {}, -- table of hex strings
+      -- termcolors = {} -- table of colour name strings
+    },
+    playground = {
+      enable = true
+    }
 }
 
 vim.cmd[[set termguicolors]]

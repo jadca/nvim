@@ -2,7 +2,17 @@ local tel = require 'telescope'
 local fb_actions = require "telescope._extensions.file_browser.actions"
 tel.setup {
   defaults = {
-    path_display = { truncate = true },
+    layout_strategy = 'horizontal',
+    layout_config = {
+      --vertical = { width = 0.9 },
+      height = 0.99,
+      preview_width = 90,
+      width = 0.99
+      -- other layout configuration here
+    },
+    path_display = { 
+      truncate = true
+    },
     --layout_strategy = "vertical",
     --layout_strategy = "center",
     shorten_path = true,

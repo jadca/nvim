@@ -78,9 +78,13 @@ use {
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 use {
+  'tpope/vim-dadbod',
+  commit = '3f57c0c',
+}
+use {
   'kristijanhusak/vim-dadbod-ui',
   requires = { 
-    'tpope/vim-dadbod',
+    --'tpope/vim-dadbod',
     'kristijanhusak/vim-dadbod-completion',
     'tpope/vim-dotenv'
   }
@@ -126,6 +130,8 @@ use {
             ts_update()
         end,
     }
+use {'nvim-treesitter/playground'}
+use {'p00f/nvim-ts-rainbow'}
 use { 'norcalli/nvim-colorizer.lua'}
 use { 'hsanson/vim-android'}
 use {
@@ -202,6 +208,8 @@ use {
   --"NTBBloodbath/rest.nvim",
   --requires = { "nvim-lua/plenary.nvim" }
 --}
+
+use {"tpope/vim-fugitive"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
