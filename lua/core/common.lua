@@ -27,19 +27,24 @@ nmap ,m3 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Domain<cr>
 nmap ,m4 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Infraestructure<cr>
 nmap ,m5 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Job<cr>
 nmap ,mw :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos<cr>
+nmap ,mwr :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos\contratacion\renovacion<cr>
+nmap ,mwp :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos\contratacion\prepublicacion30328<cr>
 nmap ,mb :!start E:\Minedu\Ayni\Api\2.Codigo\PersonalProcesoContratacion.sln<cr>
 nmap ,mf :!"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" "E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web"<cr>
 nnoremap ,ma :!start explorer E:\Minedu\Ayni<CR>
 nnoremap ,ml :!start explorer C:\logs\apps\Minedu.ProcesoContratacion.Api<CR>
 nnoremap ,mc :tabnew +/42986128 C:\Users\MSI\Desktop\userMinedu.txt<CR>
 
-nmap ,su :let @+ = "42986128"<cr><esc>
-nmap ,sc :let @+ = "CaRa6198"<cr><esc>
-nmap ,vc :let @+ = "Minedu2023*"<cr><esc>
-nmap ,rc :let @+ = "Minoct2023*"<cr><esc>
+nmap ,ru :let @+ = "sigsda11@minedu.gob.pe"<cr><esc>
+nmap ,rc :let @+ = "S40502754*"<cr><esc>
+nmap ,vu :let @+ = "sigsda10"<cr><esc>
+nmap ,vc :let @+ = "Minedu2024@@"<cr><esc>
+nmap ,bc :let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<cr><esc>
+nmap ,wo :!start https://mineduperu.sharepoint.com/:x:/s/sisda/EfmoarPoP_JAk_wgTJr9DOwBjNos5rlkgfttgn6Fjs7CJw?e=AL3ySR <cr><esc>
 
-nmap ,bs :set signcolumn=yes<cr><esc>
+nmap ,bs :set signcolumn=yes:1<cr><esc>
 nmap ,bh :set signcolumn=no<cr><esc>
+nmap ,cl :%s/\s\+$//e<cr><esc>
 
 nmap ,l :noh<cr>
 nmap ,y  viwy<esc>
@@ -117,5 +122,6 @@ let g:gradle_path = 'E:\Android\01\gradle'
 let g:android_sdk_path = 'C://Users/MSI/AppData/Local/Android/Sdk'
 let g:android_aapt_tool= 'C:\Users\MSI\AppData\Local\Android\Sdk\build-tools\34.0.0\aapt2.exe'
 set signcolumn=no
+set nowrap
 ]])
 

@@ -29,7 +29,9 @@ map{'n', '<Leader>dd', '<cmd>Telescope diagnostics<CR>', noremap = true}
 
 map{'n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>", noremap = true}
 map{'n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", noremap = true}
+--map{'n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown{previewer = true})<cr>", noremap = true}
 map{'n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", noremap = true}
+--map{'n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = true})<cr>", noremap = true}
 map{'n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", noremap = true}
 map{'n', '<leader>bb', "<cmd>Goyo<cr>", noremap = true}
 map{'n', '<leader>hy', "<cmd>call emmet#lang#html#balanceTag(10)<cr>", noremap = true}
@@ -84,6 +86,13 @@ vim.keymap.set("n", "<space>gts", function()
 --print(existFile)
   return ":split +/"..word.." "..path_file.."<cr><cr>"
 end, { expr = true })
+vim.keymap.set("n", "<space>gtv", function()
+  local path_file = vim.fn.expand('%:p:h')..'/'..vim.fn.expand('%:t:r')..'.ts'
+  local word = vim.fn.expand('<cword>')
+  local existFile = vim.fn.isdirectory(path_file)
+--print(existFile)
+  return ":vsplit +/"..word.." "..path_file.."<cr><cr>"
+end, { expr = true })
 
 vim.keymap.set("n", "<space>gla", function()
 local path
@@ -113,3 +122,42 @@ vim.keymap.set("n", "<space>xx", function()
   --vim.api.nvim_buf_set_lines(0,0,-1,true,{'aaa','bbbbb','ccccccc','dddddddd'})
 return ':call nvim_buf_set_lines(1,1,-1,v:true,["aaa","bbbbb","ccccccc","dddddddd"])' 
 end, { expr = true })
+
+vim.keymap.set('n', '<F10>', function()
+  vim.cmd('below split')
+  vim.cmd('terminal')
+  vim.fn.feedkeys('a')
+  local enter = vim.api.nvim_replace_termcodes("<CR>", true, true, true)
+  vim.fn.feedkeys('clear' .. enter)
+  vim.fn.feedkeys('echo hello world' .. enter)
+end)
+
+vim.keymap.set('n', '<space>4', function()
+  vim.cmd('below split E:/Minedu/Ayni/Request/procesarMensaje.http')
+  vim.cmd("lua require('rest-nvim').run()")
+end)
+
+vim.keymap.set('n', '<space>5', function()
+  vim.cmd('below split E:/Minedu/Ayni/Request/procesarJobPlaza.http')
+  vim.cmd("lua require('rest-nvim').run()")
+end)
+
+vim.keymap.set('n', '<space>6', function()
+  vim.cmd('below split E:/Minedu/Ayni/Request/procesarPDF.http')
+  vim.cmd("lua require('rest-nvim').run()")
+end)
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>ow",
+  ":Telescope file_browser<CR>",
+  { noremap = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>ob",
+  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  { noremap = true }
+)
+vim.keymap.set('n', ',rs', function()
+  vim.cmd("lua require('rest-nvim').run()")
+end)
