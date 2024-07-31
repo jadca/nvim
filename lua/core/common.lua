@@ -38,7 +38,7 @@ nnoremap ,mc :tabnew +/42986128 C:\Users\MSI\Desktop\userMinedu.txt<CR>
 nmap ,ru :let @+ = "sigsda11@minedu.gob.pe"<cr><esc>
 nmap ,rc :let @+ = "S40502754*"<cr><esc>
 nmap ,vu :let @+ = "sigsda10"<cr><esc>
-nmap ,vc :let @+ = "Minedu2024@@"<cr><esc>
+nmap ,vc :let @+ = "Minedu2024$"<cr><esc>
 nmap ,bc :let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<cr><esc>
 nmap ,wo :!start https://mineduperu.sharepoint.com/:x:/s/sisda/EfmoarPoP_JAk_wgTJr9DOwBjNos5rlkgfttgn6Fjs7CJw?e=AL3ySR <cr><esc>
 
