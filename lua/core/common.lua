@@ -11,7 +11,7 @@ let g:vimspector_base_dir="C:\\Users\\MSI\\AppData\\Local\\nvim-data\\site\\pack
 nnoremap <leader>aa :!start cmd /C  "cd /d E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Api && dotnet watch" <CR>
 nnoremap <leader>jj :!start cmd /C  "cd /d E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Job && dotnet watch"  <CR>
 nnoremap <leader>mm :!start cmd /C  "cd E:\Minedu\CargaMasiva\2.Codigo\rrhh-negocio-comunes-cargamasiva-backend && dotnet watch" <CR>
-nnoremap <leader>aw :!start cmd /C "cd /d  E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & ng serve"<CR>
+nnoremap <leader>aw :!start cmd /C "cd /d  E:\Minedu\Ayni\Front & ng serve"<CR>
 nnoremap <leader>bt :!start cmd /C "cd /d  E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --configuration=testing"<CR>
 nnoremap <leader>bd :!start cmd /C "cd /d  E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & node --max_old_space_size=10144 ./node_modules/@angular/cli/bin/ng build --prod --configuration=production"<CR>
 nnoremap <Leader>v :e ~/AppData/Local/nvim/init.lua<CR>
@@ -26,10 +26,15 @@ nmap ,m2 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Application<
 nmap ,m3 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Domain<cr>
 nmap ,m4 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Infraestructure<cr>
 nmap ,m5 :Ex E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Job<cr>
-nmap ,mw :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos<cr>
+nmap ,j1 :Ex E:\Minedu\Ayni\job-as-recruitments\Minedu.Ayni.Personal.Contratacion.Api<cr>
+nmap ,j2 :Ex E:\Minedu\Ayni\job-as-recruitments\Minedu.Ayni.Personal.Contratacion.Application<cr>
+nmap ,j3 :Ex E:\Minedu\Ayni\job-as-recruitments\Minedu.Ayni.Personal.Contratacion.Infraestructure<cr>
+
+nmap ,mw :Ex E:\Minedu\Ayni\Front\src\app\main\apps\procesos<cr>
 nmap ,mwr :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos\contratacion\renovacion<cr>
 nmap ,mwp :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos\contratacion\prepublicacion30328<cr>
 nmap ,mb :!start E:\Minedu\Ayni\Api\2.Codigo\PersonalProcesoContratacion.sln<cr>
+nmap ,oj :!start E:\Minedu\Ayni\job-as-recruitments\Minedu.Ayni.Personal.Contratacion.sln<cr>
 nmap ,mf :!"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" "E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web"<cr>
 nnoremap ,ma :!start explorer E:\Minedu\Ayni<CR>
 nnoremap ,ml :!start explorer C:\logs\apps\Minedu.ProcesoContratacion.Api<CR>

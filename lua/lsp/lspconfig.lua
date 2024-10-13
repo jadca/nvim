@@ -194,26 +194,26 @@ lsp_installer.on_server_ready(function(server)
 	 opts.filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' };
 --	print('emmet_ls')
     end
-    if server.name == 'kotlin_language_server' then
-      local capabilities = vim.lsp.protocol.make_client_capabilities();
-      opts.on_attach = on_attach;
-      opts.capabilities = capabilities;
-      opts.filetypes = {"kotlin"};
-      opts.handlers = handlers;
-      opts.root_dir = nvim_lsp.util.root_pattern("settings.gradle");
-      opts.cmd = {'C://Users/MSI/AppData/Local/nvim-data/lsp_servers/kotlin/server/bin/kotlin-language-server.bat'};
-      opts.settings = {
-        kotlin = {
-          compiler = {
-            jvm = {
-              target = "1.8";
-            }
-          };
-        };
-      }
-      --print(nvim_lsp.util.root_pattern("settings.gradle"))
-      --print(server.name)
-    end
+    --if server.name == 'kotlin_language_server' then
+      --local capabilities = vim.lsp.protocol.make_client_capabilities();
+      --opts.on_attach = on_attach;
+      --opts.capabilities = capabilities;
+      --opts.filetypes = {"kotlin"};
+      --opts.handlers = handlers;
+      --opts.root_dir = nvim_lsp.util.root_pattern("settings.gradle");
+      --opts.cmd = {'C://Users/MSI/AppData/Local/nvim-data/lsp_servers/kotlin/server/bin/kotlin-language-server.bat'};
+      --opts.settings = {
+        --kotlin = {
+          --compiler = {
+            --jvm = {
+              --target = "1.8";
+            --}
+          --};
+        --};
+      --}
+      ----print(nvim_lsp.util.root_pattern("settings.gradle"))
+      ----print(server.name)
+    --end
     server:setup(opts)
     vim.cmd[[do user LspAttachBuffers]]
 end)
