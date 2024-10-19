@@ -35,7 +35,7 @@ nmap ,mwr :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\
 nmap ,mwp :Ex E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web\src\app\main\apps\procesos\contratacion\prepublicacion30328<cr>
 nmap ,mb :!start E:\Minedu\Ayni\Api\2.Codigo\PersonalProcesoContratacion.sln<cr>
 nmap ,oj :!start E:\Minedu\Ayni\job-as-recruitments\Minedu.Ayni.Personal.Contratacion.sln<cr>
-nmap ,mf :!"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" "E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web"<cr>
+nmap ,mf :!"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" "E:\Minedu\Ayni\Front"<cr>
 nnoremap ,ma :!start explorer E:\Minedu\Ayni<CR>
 nnoremap ,ml :!start explorer C:\logs\apps\Minedu.ProcesoContratacion.Api<CR>
 nnoremap ,mc :tabnew +/42986128 C:\Users\MSI\Desktop\userMinedu.txt<CR>
@@ -43,7 +43,7 @@ nnoremap ,mc :tabnew +/42986128 C:\Users\MSI\Desktop\userMinedu.txt<CR>
 nmap ,ru :let @+ = "sigsda11@minedu.gob.pe"<cr><esc>
 nmap ,rc :let @+ = "S40502754*"<cr><esc>
 nmap ,vu :let @+ = "sigsda10"<cr><esc>
-nmap ,vc :let @+ = "GatitoRonRon*"<cr><esc>
+nmap ,vc :let @+ = "123Alvaro"<cr><esc>
 nmap ,bc :let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<cr><esc>
 nmap ,wo :!start https://mineduperu.sharepoint.com/:x:/s/sisda/EfmoarPoP_JAk_wgTJr9DOwBjNos5rlkgfttgn6Fjs7CJw?e=AL3ySR <cr><esc>
 

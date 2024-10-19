@@ -22,3 +22,4 @@ local set = vim.opt
 set.cursorline = true
 set.number = true
 vim.notify = require("notify")
+vim.o.laststatus = 0

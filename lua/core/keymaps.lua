@@ -161,3 +161,11 @@ vim.api.nvim_set_keymap(
 vim.keymap.set('n', ',rs', function()
   vim.cmd("lua require('rest-nvim').run()")
 end)
+function ToggleStatusLine()
+    if vim.o.laststatus == 2 then
+        vim.o.laststatus = 0
+    else
+        vim.o.laststatus = 2
+    end
+end
+vim.api.nvim_set_keymap('n', ',sl', ':lua ToggleStatusLine()<CR>', { noremap = true, silent = true })
