@@ -23,3 +23,45 @@ lspconfig.lua_ls.setup({
     },
   },
 })
+lspconfig.ts_ls.setup({
+  on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local opts = { noremap=true, silent=true }
+
+    -- Mapeos de teclas
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+
+    -- Configuraciones específicas para el cliente (opcional)
+    if client.name == "tsserver" then
+      -- Ejemplo de cómo manejar el formato (puedes personalizar esto)
+      client.resolved_capabilities.document_formatting = false
+    end
+  end,
+})
+
+-- Configuración para C# usando OmniSharp
+lspconfig.omnisharp.setup({
+    --cmd = {"C:/omnisharp-win-x64/OmniSharp.exe"},
+  on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local opts = { noremap=true, silent=true }
+
+    -- Mapeos de teclas
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+
+    -- Configuraciones específicas para el cliente (opcional)
+    if client.name == "omnisharp" then
+      --client.resolved_capabilities.document_formatting = true -- Permitir el formateo de documentos
+    end
+  end,
+flags = {
+        debounce_text_changes = 150,
+    },
+  root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
+})
