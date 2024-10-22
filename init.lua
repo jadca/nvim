@@ -6,7 +6,7 @@ require("config.options")
 require("plugins")
 
 -- Cargar los mapeos de teclas
---require("config.keymaps")
+require("config.keymaps")
 
 require("config.mason")
 

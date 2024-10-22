@@ -16,8 +16,7 @@ require("lazy").setup({
   spec = {
     { import = "plugins.lsp" },       -- Plugins relacionados con LSP
     { import = "plugins.completion" },-- Plugins de autocompletado
-    --{ import = "plugins.ui" },        -- Plugins relacionados con UI (líneas de estado, temas, etc.)
     { import = "plugins.git" },       -- Plugins relacionados con Git
-    -- Puedes agregar más categorías si lo necesitas
+    { import = "plugins.goyo" },       
  }
 })

@@ -35,7 +35,7 @@ lspconfig.ts_ls.setup({
     buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 
     -- Configuraciones específicas para el cliente (opcional)
-    if client.name == "tsserver" then
+    if client.name == "ts_ls" then
       -- Ejemplo de cómo manejar el formato (puedes personalizar esto)
       client.resolved_capabilities.document_formatting = false
     end
@@ -60,8 +60,8 @@ lspconfig.omnisharp.setup({
       --client.resolved_capabilities.document_formatting = true -- Permitir el formateo de documentos
     end
   end,
-flags = {
-        debounce_text_changes = 150,
-    },
+  flags = {
+      debounce_text_changes = 150,
+  },
   root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
 })

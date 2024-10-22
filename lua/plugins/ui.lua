@@ -6,3 +6,5 @@ return {
   -- Barra de pestañas
   { "romgrk/barbar.nvim" },
 }
+
+
