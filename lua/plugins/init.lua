@@ -18,5 +18,9 @@ require("lazy").setup({
     { import = "plugins.completion" },-- Plugins de autocompletado
     { import = "plugins.git" },       -- Plugins relacionados con Git
     { import = "plugins.goyo" },       
+    { import = "plugins.overloads" },
+    { import = "plugins.lualine" },
+    { import = "plugins.color" },
+    { import = "plugins.treesitter" }
  }
 })

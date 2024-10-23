@@ -13,3 +13,4 @@ require("config.mason")
 -- Cargar configuraciones de plugins adicionales
 require("config.lsp")
 require("config.cmp")
+require("config.lualine")
