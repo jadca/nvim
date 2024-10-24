@@ -20,7 +20,7 @@ require("lazy").setup({
     { import = "plugins.goyo" },       
     { import = "plugins.overloads" },
     { import = "plugins.lualine" },
-    { import = "plugins.color" },
-    { import = "plugins.treesitter" }
+    { import = "plugins.treesitter" },
+    { import = "plugins.color" }
  }
 })

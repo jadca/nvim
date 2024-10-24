@@ -13,5 +13,13 @@ return {
         cmd = 'TSPlaygroundToggle',
     },
     {'p00f/nvim-ts-rainbow'},
-    {'norcalli/nvim-colorizer.lua'}
+    {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            vim.cmd[[set termguicolors]]
+            require 'colorizer'.setup({
+                '*'
+            },{ mode = 'background' })
+        end,
+    }
 }
