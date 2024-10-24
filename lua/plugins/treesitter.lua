@@ -11,5 +11,7 @@ return {
     {
         'nvim-treesitter/playground',
         cmd = 'TSPlaygroundToggle',
-    }
+    },
+    {'p00f/nvim-ts-rainbow'},
+    {'norcalli/nvim-colorizer.lua'}
 }
