@@ -64,11 +64,11 @@ vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", { noremap = true, silent = true
 vim.api.nvim_set_keymap("n", "%", "%zz", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "*", "*zz", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "#", "#zz", { noremap = true, silent = true })
---vim.api.nvim_create_autocmd("CmdLineLeave", {
-  --callback = function()
-    --vim.api.nvim_feedkeys("zz", "n", false)
-  --end,
---})
+vim.api.nvim_create_autocmd("CmdLineLeave", {
+  callback = function()
+    vim.api.nvim_feedkeys("zz", "n", false)
+  end,
+})
 
 vim.api.nvim_set_keymap("n", ",2", ":cn<cr><cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", ",3", ":cp<cr><cr>", { noremap = true, silent = true })
