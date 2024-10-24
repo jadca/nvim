@@ -1,5 +1,9 @@
 local lspconfig = require("lspconfig")
 
+-- Configuración para Prettier
+lspconfig.prettier.setup {
+    filetypes = { "typescript", "javascript", "html", "css" }, -- Lenguajes soportados
+}
 -- Configuración del servidor Lua (lua-language-server)
 lspconfig.lua_ls.setup({
   settings = {
@@ -23,7 +27,6 @@ lspconfig.lua_ls.setup({
     },
   },
 })
-
 local keyMapLsp = function(client, bufnr)
 	local opts = { noremap=true, silent=true }
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -89,17 +92,16 @@ local custom_handlers = {
     border = "rounded",
   }),
 }
-
 lspconfig.ts_ls.setup({
-  on_attach = function(client, bufnr)
-      keyMapLsp(client, bufnr)
-    -- Configuraciones específicas para el cliente (opcional)
-    if client.name == "ts_ls" then
-      -- Ejemplo de cómo manejar el formato (puedes personalizar esto)
-      client.resolved_capabilities.document_formatting = false
-    end
-  end,
-  handlers = custom_handlers
+    on_attach = function(client, bufnr)
+        keyMapLsp(client, bufnr)
+        -- Configuraciones específicas para el cliente (opcional)
+        if client.name == "ts_ls" then
+            -- Ejemplo de cómo manejar el formato (puedes personalizar esto)
+            --client.resolved_capabilities.document_formatting = false
+        end
+    end,
+    handlers = custom_handlers
 })
 
 -- Configuración para C# usando OmniSharp

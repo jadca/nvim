@@ -6,8 +6,7 @@ ensure_installed = { "c_sharp","typescript","html"},
   ignore_install = { "javascript" },
   highlight = {
     enable = true,
-    --disable = {"lua","vim","javascript","typescript","html"},
-    disable = {"lua","vim","http","txt"},
+    disable = {"vim","http","txt"},
     additional_vim_regex_highlighting =true, 
   },
  incremental_selection = {

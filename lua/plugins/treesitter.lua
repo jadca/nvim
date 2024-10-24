@@ -8,4 +8,8 @@ return {
             require("config.treesitter")
         end,
     },
+    {
+        'nvim-treesitter/playground',
+        cmd = 'TSPlaygroundToggle',
+    }
 }
