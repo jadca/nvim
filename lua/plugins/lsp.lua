@@ -1,8 +1,20 @@
 return {
-  -- Plugin para manejar la configuración de servidores LSP
-  { "neovim/nvim-lspconfig" },
-  -- Plugin para gestionar servidores LSP y herramientas
-  { "williamboman/mason.nvim" },
-  -- Integración de mason con lspconfig
-  { "williamboman/mason-lspconfig.nvim" },
+  {
+      "neovim/nvim-lspconfig",
+      config = function()
+          require("config.lsp").setup_lspconfig()
+      end
+  },
+  { 
+      "williamboman/mason.nvim",
+      config = function()
+          require("config.mason").setup_mason()
+      end
+  },
+  { 
+      "williamboman/mason-lspconfig.nvim",
+      config = function()
+          require("config.mason-lspconfig").setup_masonlspconfig()
+      end
+  },
 }

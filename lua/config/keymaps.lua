@@ -73,3 +73,19 @@ vim.api.nvim_set_keymap("n", ",2", ":cn<cr><cr>", { noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", ",3", ":cp<cr><cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", ",1", ":cfirst<cr><cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", ",4", ":clast<cr><cr>", { noremap = true, silent = true })
+
+
+vim.keymap.set('n', '<space>4', function()
+  vim.cmd('below split E:/Minedu/Ayni/Request/procesarMensaje.http')
+  vim.cmd("lua require('rest-nvim').run()")
+end)
+
+vim.keymap.set('n', '<space>5', function()
+  vim.cmd('below split E:/Minedu/Ayni/Request/procesarJobPlaza.http')
+  vim.cmd("lua require('rest-nvim').run()")
+end)
+
+vim.keymap.set('n', '<space>6', function()
+  vim.cmd('below split E:/Minedu/Ayni/Request/procesarPDF.http')
+  vim.cmd("lua require('rest-nvim').run()")
+end)

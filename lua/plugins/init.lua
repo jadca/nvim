@@ -13,14 +13,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  spec = {
-    { import = "plugins.lsp" },       -- Plugins relacionados con LSP
-    { import = "plugins.completion" },-- Plugins de autocompletado
-    { import = "plugins.git" },       -- Plugins relacionados con Git
-    { import = "plugins.goyo" },       
-    { import = "plugins.overloads" },
-    { import = "plugins.lualine" },
-    { import = "plugins.treesitter" },
-    { import = "plugins.color" }
- }
+    spec = {
+        { import = "plugins.lsp" },
+        { import = "plugins.completion" },
+        { import = "plugins.git" },
+        { import = "plugins.goyo" },
+        { import = "plugins.overloads" },
+        { import = "plugins.lualine" },
+        { import = "plugins.treesitter" },
+        { import = "plugins.color" },
+        { import = "plugins.telescope" },
+        { import = "plugins.autopairs" },
+        { import = "plugins.rest" }
+    }
 })

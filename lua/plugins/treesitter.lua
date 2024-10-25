@@ -5,7 +5,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         --build = ':TSUpdate',  -- Ejecuta el comando para actualizar los parsers al instalar
         config = function()
-            require("config.treesitter")
+            --require("config.treesitter")
         end,
     },
     {
