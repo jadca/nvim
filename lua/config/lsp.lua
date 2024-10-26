@@ -110,7 +110,7 @@ function M.setup_lspconfig()
 
     -- Configuración para C# usando OmniSharp
     lspconfig.omnisharp.setup({
-        --cmd = {"C:/omnisharp-win-x64/OmniSharp.exe"},
+        cmd = {"C:/omnisharp-win-x64/OmniSharp.exe"},
         on_attach = function(client, bufnr)
             keyMapLsp(client, bufnr)
             -- Configuraciones específicas para el cliente (opcional)
