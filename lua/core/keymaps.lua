@@ -64,10 +64,26 @@ vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>zz", { noremap = true, silent = true
 vim.api.nvim_set_keymap("n", "%", "%zz", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "*", "*zz", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "#", "#zz", { noremap = true, silent = true })
-vim.api.nvim_create_autocmd("CmdLineLeave", {
-  callback = function()
-    vim.api.nvim_feedkeys("zz", "n", false)
-  end,
+--vim.api.nvim_create_autocmd("CmdLineLeave", {
+  --callback = function()
+    ----vim.api.nvim_feedkeys("zz", "n", false)
+    --if vim.fn.getcmdtype() == '/' or vim.fn.getcmdtype() == '?' then
+      --vim.cmd("normal! zz")
+    --end
+  --end,
+--})
+-- Define una función para centrar la línea después de una búsqueda
+local function center_after_search()
+    -- Revisa si la última búsqueda fue con / o ?
+    local search_cmd = vim.fn.getcmdtype()
+    if search_cmd == "/" or search_cmd == "?" then
+        vim.api.nvim_feedkeys("zz", "n", false)  -- Centra la línea de la búsqueda
+    end
+end
+
+-- Configura un autocmd para ejecutar la función al salir del modo de línea de comandos
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+    callback = center_after_search,
 })
 
 vim.api.nvim_set_keymap("n", ",2", ":cn<cr><cr>", { noremap = true, silent = true })
@@ -169,3 +185,4 @@ function ToggleStatusLine()
     end
 end
 vim.api.nvim_set_keymap('n', ',sl', ':lua ToggleStatusLine()<CR>', { noremap = true, silent = true })
+

@@ -10,6 +10,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 let g:vimspector_base_dir="C:\\Users\\MSI\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vimspector"
 nnoremap <leader>aa :!start cmd /C  "cd /d E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Api && dotnet watch" <CR>
 nnoremap <leader>jj :!start cmd /C  "cd /d E:\Minedu\Ayni\Api\2.Codigo\Minedu.ProcesoContratacion.Job && dotnet watch"  <CR>
+nnoremap <leader>jb :!start cmd /C  "cd /d E:\Minedu\Ayni\job-as-recruitments\Minedu.Ayni.Personal.Contratacion.Api && dotnet watch"  <CR>
 nnoremap <leader>mm :!start cmd /C  "cd E:\Minedu\CargaMasiva\2.Codigo\rrhh-negocio-comunes-cargamasiva-backend && dotnet watch" <CR>
 nnoremap <leader>aw :!start cmd /C "cd /d  E:\Minedu\Ayni\Front & ng serve"<CR>
 nnoremap <leader>bt :!start cmd /C "cd /d  E:\Minedu\Ayni\Front\2.Codigo\rrhh-personal-web & node --max_old_space_size=8048 ./node_modules/@angular/cli/bin/ng build --prod --configuration=testing"<CR>
