@@ -24,6 +24,7 @@ require("lazy").setup({
         { import = "plugins.color" },
         { import = "plugins.telescope" },
         { import = "plugins.autopairs" },
-        { import = "plugins.rest" }
+        { import = "plugins.rest" },
+        { import = "plugins.codeium" },
     }
 })

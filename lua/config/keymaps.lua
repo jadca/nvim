@@ -65,7 +65,13 @@ vim.keymap.set("n", "*", "*zz", { noremap = true, silent = true })
 vim.keymap.set("n", "#", "#zz", { noremap = true, silent = true })
 vim.api.nvim_create_autocmd("CmdLineLeave", {
   callback = function()
-    vim.api.nvim_feedkeys("zz", "n", false)
+      if not vim.b.is_codeium_suggestion then
+          vim.api.nvim_feedkeys("zz", "n", false)
+      end
+      if vim.b.is_codeium_suggestion then
+          vim.cmd("normal! zz")
+      end
+      vim.b.is_codeium_suggestion = false;
   end,
 })
 
