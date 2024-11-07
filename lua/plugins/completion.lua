@@ -5,13 +5,17 @@ return {
           require("config.cmp").setup_cmp()  -- Llama a la configuración de LuaSnip
       end
   },
-  { "hrsh7th/cmp-nvim-lsp" },
+  { 
+      "hrsh7th/cmp-nvim-lsp",
+  },
   {
       "L3MON4D3/LuaSnip",
       dependencies = { "rafamadriz/friendly-snippets" },
       config = function()
           require("config.luasnip").setup_luasnip()  -- Llama a la configuración de LuaSnip
-      end
+      end,
   },
-  { "saadparwaiz1/cmp_luasnip" },
+  { 
+      "saadparwaiz1/cmp_luasnip",
+  },
 }

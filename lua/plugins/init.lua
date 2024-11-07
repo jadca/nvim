@@ -14,17 +14,32 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
-        { import = "plugins.lsp" },
-        { import = "plugins.completion" },
-        { import = "plugins.git" },
-        { import = "plugins.goyo" },
-        { import = "plugins.overloads" },
-        { import = "plugins.lualine" },
-        { import = "plugins.treesitter" },
-        { import = "plugins.color" },
-        { import = "plugins.telescope" },
-        { import = "plugins.autopairs" },
-        { import = "plugins.rest" },
-        { import = "plugins.codeium" },
-    }
+        { import = "plugins.lsp", ft = {"lua","javascript", "c_sharp", "typescript" } },
+        { import = "plugins.completion", ft = {"lua","javascript", "c_sharp", "typescript" } },
+        { import = "plugins.git", lazy = false},
+        { import = "plugins.goyo" , cmd = "Goyo"},
+        { import = "plugins.overloads", ft = {"lua","javascript", "c_sharp", "typescript" } },
+        { import = "plugins.lualine" , event = "VimEnter"},
+        { import = "plugins.treesitter" , ft = {"lua","javascript", "c_sharp", "typescript" } },
+        { import = "plugins.color" , lazy = false},
+        { import = "plugins.telescope", event = "BufReadPost" },
+        { import = "plugins.autopairs", ft = {"lua","javascript", "c_sharp", "typescript" } },
+        { import = "plugins.rest" , cmd = "RestNvim" },
+        { import = "plugins.codeium" ,ft = {"lua","javascript", "c_sharp", "typescript" }},
+    },
+    opts = {
+        rocks = {
+            enabled = false,  -- Desactiva `luarocks` si da errores
+            hererocks = true  -- Activa `hererocks` si es necesario
+        },
+    },
+    performance = {
+        cache = {
+            enabled = true,
+        },
+    },
+    rocks = {
+        root = vim.fn.stdpath("data") .. "/lazy-rocks",
+        server = "https://nvim-neorocks.github.io/rocks-binaries/",
+    },
 })

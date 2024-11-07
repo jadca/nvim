@@ -1,4 +1,4 @@
 require("config.options")
 require("plugins")
 require("config.keymaps")
-require("config.treesitter")
+require('config.color-code').setup_color_code()

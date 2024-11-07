@@ -54,6 +54,11 @@ function M.setup_lspconfig()
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wS', '<cmd>Telescope lsp_workspace_symbols<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wq', '<cmd>lua vim.diagnostic.setqflist()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wa', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Tab>k', '<cmd>lua vim.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Tab>j', '<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Tab><Tab>', ':lua  vim.diagnostic.open_float(0, { scope = "line", border = "single" }) <CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>dd', '<cmd>Telescope diagnostics<CR>', opts)
+
         require('lsp-overloads').setup(client, {  
             ui = {
                 border = "single",

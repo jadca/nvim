@@ -24,6 +24,8 @@ vim.keymap.set("n", ",bh", ':set signcolumn=no<CR><ESC>', { noremap = true, sile
 vim.keymap.set("n", ",cl", ':%s/\\s\\+$//e<CR><ESC>', { noremap = true, silent = true })
 
 vim.keymap.set("n", ",l", ':noh<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",y", 'viwy<ESC>', { noremap = true, silent = true })
+vim.keymap.set("n", ",p", 'viw"0p<ESC>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>b1", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Api<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>b2", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Application<CR>', { noremap = true, silent = true })
@@ -47,6 +49,10 @@ vim.keymap.set("n", "<leader>mm", ':!start cmd /C "cd /d E:\\Minedu\\CargaMasiva
 vim.keymap.set("n", "<leader>aw", ':!start cmd /C "cd /d E:\\Minedu\\Ayni\\Front && ng serve"<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', ',mw', ':Ex E:\\Minedu\\Ayni\\Front\\src\\app\\main\\apps\\procesos<CR>', { noremap = true, silent = true })
+
+vim.keymap.set("n", ",mf", ':!"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\Common7\\IDE\\devenv.exe" "E:\\Minedu\\Ayni\\Front"<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",mb", ':!start E:\\Minedu\\Ayni\\Api\\2.Codigo\\PersonalProcesoContratacion.sln<cr>', { noremap = true, silent = true })
+vim.keymap.set("n", ",oj", ':!start E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.sln<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>g", ":Goyo<CR>", { noremap = true, silent = true })
 
@@ -83,15 +89,19 @@ vim.api.nvim_set_keymap("n", ",4", ":clast<cr><cr>", { noremap = true, silent = 
 
 vim.keymap.set('n', '<space>4', function()
   vim.cmd('below split E:/Minedu/Ayni/Request/procesarMensaje.http')
-  vim.cmd("lua require('rest-nvim').run()")
+  vim.cmd("lua require('kulala').run()")
 end)
 
 vim.keymap.set('n', '<space>5', function()
   vim.cmd('below split E:/Minedu/Ayni/Request/procesarJobPlaza.http')
-  vim.cmd("lua require('rest-nvim').run()")
+  vim.cmd("lua require('kulala').run()")
 end)
 
 vim.keymap.set('n', '<space>6', function()
   vim.cmd('below split E:/Minedu/Ayni/Request/procesarPDF.http')
-  vim.cmd("lua require('rest-nvim').run()")
+  vim.cmd("lua require('kulala').run()")
 end)
+
+vim.keymap.set("n", ",vu", ':let @+ = "sigsda10"<cr><esc>', { noremap = true, silent = true })
+vim.keymap.set("n", ",vc", ':let @+ = "123Alvaro"<cr><esc>', { noremap = true, silent = true })
+vim.keymap.set("n", ",bc", ':let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<cr><esc>', { noremap = true, silent = true })
