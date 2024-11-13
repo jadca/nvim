@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup_treesitter()
     require('nvim-treesitter.configs').setup {
-        ensure_installed = { "c_sharp","javascript","typescript","html"},
+        ensure_installed = { "c_sharp","javascript","typescript","html","lua"},
         sync_install = false,
         auto_install = false, 
         --ignore_install = { "javascript" },

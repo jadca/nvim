@@ -27,11 +27,11 @@ vim.keymap.set("n", ",l", ':noh<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",y", 'viwy<ESC>', { noremap = true, silent = true })
 vim.keymap.set("n", ",p", 'viw"0p<ESC>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>b1", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Api<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b2", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Application<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b3", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Domain<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b4", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Infraestructure<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b5", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Job<CR>', { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader>b1", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Api<CR>', { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader>b2", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Application<CR>', { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader>b3", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Domain<CR>', { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader>b4", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Infraestructure<CR>', { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader>b5", ':!dotnet build E:\\Minedu\\Ayni\\Api\\2.Codigo\\Minedu.ProcesoContratacion.Job<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", ",m1", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",m2", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Application<CR>', { noremap = true, silent = true })
@@ -58,6 +58,7 @@ vim.keymap.set('n', ',mw', ':Ex E:\\Minedu\\Ayni\\Front\\src\\app\\main\\apps\\p
 vim.keymap.set("n", ",wo", ':!"C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\Common7\\IDE\\devenv.exe" "E:\\Minedu\\Ayni\\Front"<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",co", ':!start E:\\Minedu\\Ayni\\Contratacion\\src\\msa-as-recruitments.sln<cr>', { noremap = true, silent = true })
 vim.keymap.set("n", ",jo", ':!start E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.sln<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",ro", ':!start E:\\Minedu\\Ayni\\Renovacion\\src\\msa-as-renewals.sln<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>g", ":Goyo<CR>", { noremap = true, silent = true })
 

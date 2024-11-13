@@ -1,5 +1,7 @@
 return  {
     "junegunn/goyo.vim",
+    lazy = true,               -- Activar la carga diferida
+    cmd = "Goyo",              -- Cargar Goyo solo cuando se ejecute el comando :Goyo
     config = function()
         vim.g.goyo_width = 80  -- Cambia el ancho de Goyo
         vim.g.goyo_height = 0.9 -- Cambia la altura de Goyo

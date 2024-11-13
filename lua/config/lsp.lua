@@ -4,10 +4,10 @@ function M.setup_lspconfig()
 
     local lspconfig = require("lspconfig")
 
-    -- Configuración para Prettier
-    lspconfig.prettier.setup {
-        filetypes = { "typescript", "javascript", "html", "css" }, -- Lenguajes soportados
-    }
+    ---- Configuración para Prettier
+    --lspconfig.prettier.setup {
+        --filetypes = { "typescript", "javascript", "html", "css" }, -- Lenguajes soportados
+    --}
     -- Configuración del servidor Lua (lua-language-server)
     lspconfig.lua_ls.setup({
         settings = {
