@@ -45,12 +45,13 @@ vim.keymap.set("n", ",r1", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.S
 vim.keymap.set("n", ",r2", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Application<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",r3", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Domain<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",r4", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Infrastructure<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>r1", ':new | r !dotnet build E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Api<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>aa", ':!start cmd /C "cd /d E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api && dotnet watch"<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>jj", ':!start cmd /C "cd /d E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Api && dotnet watch"<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>mm", ':!start cmd /C "cd /d E:\\Minedu\\CargaMasiva\\2.Codigo\\rrhh-negocio-comunes-cargamasiva-backend && dotnet watch"<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>aw", ':!start cmd /C "cd /d E:\\Minedu\\Ayni\\Front && ng serve"<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>aw", ':!start cmd /C "cd /d E:\\Minedu\\Ayni\\Front && ng serve --configuration=local"<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', ',mw', ':Ex E:\\Minedu\\Ayni\\Front\\src\\app\\main\\apps\\procesos<CR>', { noremap = true, silent = true })
 
@@ -110,3 +111,9 @@ end)
 vim.keymap.set("n", ",vu", ':let @+ = "sigsda10"<cr><esc>', { noremap = true, silent = true })
 vim.keymap.set("n", ",vc", ':let @+ = "123Alvaro"<cr><esc>', { noremap = true, silent = true })
 vim.keymap.set("n", ",bc", ':let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<cr><esc>', { noremap = true, silent = true })
+
+vim.keymap.set("n", "<space>gla", function()
+local path
+  for dir in io.popen([[dir "C:/logs" /b/O:D]]):lines() do path = dir end 
+  return ':!start notepad++ "C:/logs/'..path..'"<cr><cr>'
+end, { expr = true })
