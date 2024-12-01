@@ -29,7 +29,7 @@ require("lazy").setup({
         { import = "plugins.autopairs" },
         { import = "plugins.rest"  },
         { import = "plugins.codeium" },
-        { import = "plugins.notify" }
+        --{ import = "plugins.notify" }
     },
     opts = {
         rocks = {

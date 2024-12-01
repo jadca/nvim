@@ -134,21 +134,5 @@ function M.setup_lspconfig()
         root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
         handlers = custom_handlers
     })
-    --lspconfig.angularls.setup({
-        --on_attach = function(client, bufnr)
-            --keyMapLsp(client, bufnr)
-            ---- Agrega atajos de teclado si es necesario
-        --end,
-        --capabilities = require("cmp_nvim_lsp").default_capabilities(),
-        --root_dir = lspconfig.util.root_pattern("angular.json", ".git"),
-    --})
-    --lspconfig.html.setup({
-        --filetypes = { "html"}, -- Asegúrate de incluir tus tipos de archivo
-        --on_attach = function(client, bufnr)
-            --keyMapLsp(client, bufnr)
-        --end,
-        --capabilities = require("cmp_nvim_lsp").default_capabilities(), -- Habilita autocompletado con nvim-cmp
-    --})
-
 end
 return M

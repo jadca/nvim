@@ -2,7 +2,6 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 
-map("n", ",e", ":Ex<CR>", { expr = false })
 map("n", "<leader>y", ":let @+=expand('%:t')<CR>", { expr = false })
 map("n", "<leader>e", ":!start explorer %:p:h<CR>", { expr = false })
 map("n", "<leader>v", ":e ~/AppData/Local/nvim/init.lua<CR>", opts)
@@ -16,7 +15,7 @@ vim.keymap.set("n", "<leader>w", ':write<CR><ESC>', { noremap = true, silent = t
 vim.keymap.set("n", ",ru", ':let @+ = "sigsda11@minedu.gob.pe"<CR><ESC>', { noremap = true, silent = true })
 vim.keymap.set("n", ",rc", ':let @+ = "S40502754*"<CR><ESC>', { noremap = true, silent = true })
 vim.keymap.set("n", ",vu", ':let @+ = "sigsda10"<CR><ESC>', { noremap = true, silent = true })
-vim.keymap.set("n", ",vc", ':let @+ = "123Alvaro"<CR><ESC>', { noremap = true, silent = true })
+vim.keymap.set("n", ",vc", ':let @+ = "456Alvaro"<CR><ESC>', { noremap = true, silent = true })
 vim.keymap.set("n", ",bc", ':let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<CR><ESC>', { noremap = true, silent = true })
 
 vim.keymap.set("n", ",bs", ':set signcolumn=yes:1<CR><ESC>', { noremap = true, silent = true })
@@ -109,7 +108,7 @@ vim.keymap.set('n', '<space>6', function()
 end)
 
 vim.keymap.set("n", ",vu", ':let @+ = "sigsda10"<cr><esc>', { noremap = true, silent = true })
-vim.keymap.set("n", ",vc", ':let @+ = "123Alvaro"<cr><esc>', { noremap = true, silent = true })
+vim.keymap.set("n", ",vc", ':let @+ = "456Alvaro"<cr><esc>', { noremap = true, silent = true })
 vim.keymap.set("n", ",bc", ':let @+ = "http://localhost:4200/ayni/personal/procesospersonal/procesos/contratacion/consolidado/356"<cr><esc>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<space>gla", function()
@@ -117,3 +116,44 @@ local path
   for dir in io.popen([[dir "C:/logs" /b/O:D]]):lines() do path = dir end 
   return ':!start notepad++ "C:/logs/'..path..'"<cr><cr>'
 end, { expr = true })
+
+vim.keymap.set("n", "<leader>l", function()
+    if vim.wo.wrap then
+        vim.wo.wrap = false
+    else
+        vim.wo.wrap = true
+    end
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>rn", function()
+    vim.o.relativenumber = not vim.o.relativenumber
+end, { noremap = true, silent = true })
+
+
+vim.keymap.set("n", "<space>gts", function()
+  local path_file = vim.fn.expand('%:p:h')..'/'..vim.fn.expand('%:t:r')..'.ts'
+  local word = vim.fn.expand('<cword>')
+  local existFile = vim.fn.isdirectory(path_file)
+  return ":split +/"..word.." "..path_file.."<cr><cr>"
+end, { expr = true })
+
+vim.keymap.set("n", "<space>gtv", function()
+  local path_file = vim.fn.expand('%:p:h')..'/'..vim.fn.expand('%:t:r')..'.ts'
+  local word = vim.fn.expand('<cword>')
+  local existFile = vim.fn.isdirectory(path_file)
+  return ":vsplit +/"..word.." "..path_file.."<cr><cr>"
+end, { expr = true })
+
+vim.keymap.set("n", ",e", function()
+    -- Obtener el nombre del archivo actual
+    local file_name = vim.fn.expand("%:t") -- Solo el nombre del archivo, sin el path completo
+    vim.cmd("Explore")
+    if file_name ~= "" then
+        -- Retrasar la búsqueda para asegurar que netrw cargue completamente
+        vim.defer_fn(function()
+            -- Buscar el archivo con el nombre copiado
+            vim.cmd("/" .. vim.fn.escape(file_name, "/"))
+            vim.cmd(":noh")
+        end, 100) -- Retraso de 100 ms
+    end
+end)
