@@ -49,3 +49,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
         end
     end,
 })
+
+vim.g.netrw_banner = 0
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    require('config.color-code').setup_color_code_cs()
+    require('config.color-code').setup_color_code_typescript()
+  end,
+})

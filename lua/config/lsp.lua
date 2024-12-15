@@ -106,6 +106,36 @@ function M.setup_lspconfig()
             border = "rounded",
         }),
     }
+
+    local custom_border = {
+        {"╭", "FloatBorder"},
+        {"─", "FloatBorder"},
+        {"╮", "FloatBorder"},
+        {"│", "FloatBorder"},
+        {"╯", "FloatBorder"},
+        {"─", "FloatBorder"},
+        {"╰", "FloatBorder"},
+        {"│", "FloatBorder"},
+    }
+    -- Configuración del manejador para "hover"
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = custom_border,
+    })
+
+    -- Configuración del manejador para "signatureHelp"
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = custom_border,
+    })
+
+    -- Configuración global opcional para mejorar la apariencia
+    vim.diagnostic.config({
+        float = {
+            border = custom_border,  -- Aplica el borde personalizado también a diagnósticos
+            source = "always",       -- Muestra siempre el origen del diagnóstico
+            prefix = "●",            -- Prefijo para los mensajes de diagnóstico
+        },
+    })
+
     lspconfig.ts_ls.setup({
         on_attach = function(client, bufnr)
             keyMapLsp(client, bufnr)
@@ -113,26 +143,46 @@ function M.setup_lspconfig()
             if client.name == "ts_ls" then
                 -- Ejemplo de cómo manejar el formato (puedes personalizar esto)
                 --client.resolved_capabilities.document_formatting = false
+                --client.server_capabilities.documentFormattingProvider = false
+                --client.server_capabilities.documentRangeFormattingProvider = false
             end
         end,
-        handlers = custom_handlers
+        settings = {
+            tsserver = {
+                logVerbosity = "off", -- Reduce el nivel de logs
+                maxTsServerMemory = 4096, -- Incrementa la memoria máxima si es necesario
+            },
+        },
+        flags = {
+            debounce_text_changes = 150,
+        },
+        --handlers = custom_handlers
     })
 
     -- Configuración para C# usando OmniSharp
     lspconfig.omnisharp.setup({
         cmd = {"C:/omnisharp-win-x64/OmniSharp.exe"},
+       -- cmd = {"C:/Users/MSI/AppData/Local/nvim-data/lsp_servers/omnisharp/omnisharp-mono/OmniSharp.exe"},
+        --cmd = { "OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
         on_attach = function(client, bufnr)
             keyMapLsp(client, bufnr)
             -- Configuraciones específicas para el cliente (opcional)
-            if client.name == "omnisharp" then
-                --client.resolved_capabilities.document_formatting = true -- Permitir el formateo de documentos
-            end
+            --if client.name == "omnisharp" then
+                ----client.resolved_capabilities.document_formatting = true -- Permitir el formateo de documentos
+            --end
         end,
+        capabilities = vim.lsp.protocol.make_client_capabilities(),
+        settings = {
+            tsserver = {
+                logVerbosity = "off", -- Reduce el nivel de logs
+                maxTsServerMemory = 4096, -- Incrementa la memoria máxima si es necesario
+            },
+        },
         flags = {
             debounce_text_changes = 150,
         },
         root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
-        handlers = custom_handlers
+        --handlers = custom_handlers
     })
 end
 return M

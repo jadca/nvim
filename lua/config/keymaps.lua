@@ -26,24 +26,24 @@ vim.keymap.set("n", ",l", ':noh<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",y", 'viwy<ESC>', { noremap = true, silent = true })
 vim.keymap.set("n", ",p", 'viw"0p<ESC>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>b1", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b2", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Application<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b3", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Domain<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b4", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Infraestructure<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ba", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bs", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Application<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bd", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Domain<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bf", ':new | r !dotnet build E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Infraestructure<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", ",c1", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",c2", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Application<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",c3", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Domain<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",c4", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Infraestructure<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",ca", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",cs", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Application<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",cd", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Domain<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",cf", ':Ex E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Infraestructure<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", ",j1", ':Ex E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Api<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",j2", ':Ex E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Application<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",j3", ':Ex E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Infraestructure<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",ja", ':Ex E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Api<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",js", ':Ex E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Application<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",jd", ':Ex E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.Infraestructure<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", ",r1", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Api<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",r2", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Application<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",r3", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Domain<CR>', { noremap = true, silent = true })
-vim.keymap.set("n", ",r4", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Infrastructure<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",ra", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Api<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",rs", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Application<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",rd", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Domain<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", ",rf", ':Ex E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Infrastructure<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>r1", ':new | r !dotnet build E:\\Minedu\\Ayni\\Renovacion\\src\\Minedu.Ayni.Staff.Renewals.Api<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>aa", ':!start cmd /C "cd /d E:\\Minedu\\Ayni\\Contratacion\\src\\Minedu.Ayni.Staff.Recruitments.Api && dotnet watch"<CR>', { noremap = true, silent = true })
@@ -59,7 +59,7 @@ vim.keymap.set("n", ",co", ':!start E:\\Minedu\\Ayni\\Contratacion\\src\\msa-as-
 vim.keymap.set("n", ",jo", ':!start E:\\Minedu\\Ayni\\job-as-recruitments\\Minedu.Ayni.Personal.Contratacion.sln<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", ",ro", ':!start E:\\Minedu\\Ayni\\Renovacion\\src\\msa-as-renewals.sln<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>g", ":Goyo<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", ",go", ":Goyo<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
@@ -77,7 +77,7 @@ vim.keymap.set("n", "#", "#zz", { noremap = true, silent = true })
 vim.api.nvim_create_autocmd("CmdLineLeave", {
   callback = function()
       if not vim.b.is_codeium_suggestion then
-          vim.api.nvim_feedkeys("zz", "n", false)
+          --vim.api.nvim_feedkeys("zz", "n", false)
       end
       if vim.b.is_codeium_suggestion then
           vim.cmd("normal! zz")
@@ -113,8 +113,8 @@ vim.keymap.set("n", ",bc", ':let @+ = "http://localhost:4200/ayni/personal/proce
 
 vim.keymap.set("n", "<space>gla", function()
 local path
-  for dir in io.popen([[dir "C:/logs" /b/O:D]]):lines() do path = dir end 
-  return ':!start notepad++ "C:/logs/'..path..'"<cr><cr>'
+  for dir in io.popen([[dir "E:/logs/apps" /b/O:D]]):lines() do path = dir end 
+  return ':!start notepad++ "E:/logs/apps/'..path..'"<cr><cr>'
 end, { expr = true })
 
 vim.keymap.set("n", "<leader>l", function()
@@ -129,6 +129,12 @@ vim.keymap.set("n", "<leader>rn", function()
     vim.o.relativenumber = not vim.o.relativenumber
 end, { noremap = true, silent = true })
 
+vim.keymap.set("n", "<space>go", function()
+  local path_file = vim.fn.expand('%:p:h')..'/'..vim.fn.expand('%:t:r')..'.ts'
+  local word = vim.fn.expand('<cword>')
+  vim.cmd(":split +/"..word.." "..path_file)
+  vim.cmd("only")
+end)
 
 vim.keymap.set("n", "<space>gts", function()
   local path_file = vim.fn.expand('%:p:h')..'/'..vim.fn.expand('%:t:r')..'.ts'
@@ -157,3 +163,15 @@ vim.keymap.set("n", ",e", function()
         end, 100) -- Retraso de 100 ms
     end
 end)
+vim.cmd([[
+nnoremap gob  :s/\((\zs\\|,\ *\zs\\|)\)/\r&/g<CR><Bar>:'[,']normal ==<CR><Bar>:noh<CR>
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+]])
+
+vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>2", ":resize +5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>3", ":resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>4", ":vertical resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>1", ":vertical resize +5<CR>", { noremap = true, silent = true })

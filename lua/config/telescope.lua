@@ -11,7 +11,6 @@ function M.setup_telescope()
                 --mirror = false,          -- Preview debajo por defecto.
             --},
         --},
-
             
             path_display = { "tail" },
             prompt_prefix = "🔍 ",
